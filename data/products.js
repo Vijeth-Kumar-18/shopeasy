@@ -5,7 +5,7 @@ const products = [
         price: 7499, 
         category: "electronics",
         rating: 4.5,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfUpTovB306pmblWm1TP8ZcBaWXSu2T-TqwA&s",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_BWZWXjAZxddByC2Oob1GQoRjDcAwbPrhdQ&s",
         description: "High-quality wireless headphones with noise cancellation and 30-hour battery life."
     },
     {
@@ -14,7 +14,7 @@ const products = [
         price: 52499, 
         category: "electronics",
         rating: 4.8,
-        image: "https://5.imimg.com/data5/IOS/Default/2024/2/386418116/UE/WP/WE/32937390/product-jpeg-500x500.png",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWIZYNsZMfg6VBiuGdAg59JgcNkfXwOyxpIA&s",
         description: "Latest smartphone with 6.5-inch display, triple camera, and 128GB storage."
     },
     {
@@ -32,7 +32,7 @@ const products = [
         price: 14999, 
         category: "electronics",
         rating: 4.3,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkoWGfIETrjwx-wjZHIydCNm05CqrXfrsv9A&s",
+        image: "https://ptron.in/cdn/shop/files/B0C81WSDV1.MAIN_1024x1024.jpg?v=1690546549",
         description: "Fitness tracker with heart rate monitor, GPS, and 7-day battery life."
     },
     {

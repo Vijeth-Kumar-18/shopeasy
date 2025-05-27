@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html">ShopEasy</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search products...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-actions">
+                <a href="#" id="account-btn"><i class="fas fa-user"></i> Account</a>
+                <a href="cart.html" id="cart-btn"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">All Products</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Clothing</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Summer Sale - Up to 50% Off</h1>
+                <p>Discover amazing deals on your favorite products</p>
+                <a href="products.html" class="btn">Shop Now</a>
+            </div>
+        </section>
+
+        <section class="featured-categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+        <div class="category-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ6J11I0mnDbcBp5X8C0seFRbLfe1Do28hEw&s" alt="Electronics">
+            <h3>Electronics</h3>
+            <a href="products.html?category=electronics" class="btn">Browse</a>
+        </div>
+        <div class="category-card">
+            <img src="https://img.freepik.com/premium-photo/pink-wedding-dress-isolated-white-background_970631-1588.jpg" alt="Clothing">
+            <h3>Clothing</h3>
+            <a href="products.html?category=clothing" class="btn">Browse</a>
+        </div>
+        <div class="category-card">
+            <img src="https://www.rd.com/wp-content/uploads/2023/05/70-of-the-Funniest-Books-of-All-Time9-delilah-green-doesnt-care.jpg?fit=700%2C700" alt="Books">
+            <h3>Books</h3>
+            <a href="products.html?category=books" class="btn">Browse</a>
+        </div>
+    </div>
+</section>
+
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-grid" id="featured-products">
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About ShopEasy</h3>
+                <p>Your one-stop shop for all your needs. Quality products at affordable prices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@shopeasy.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 ShopEasy. All rights reserved.</p>
+            <p>Yasu ji Balle Balle</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="data/products.js"></script>
+    <script>
+        // Load featured products
+        document.addEventListener('DOMContentLoaded', function() {
+            const featuredContainer = document.getElementById('featured-products');
+            const featuredProducts = products.slice(0, 4); // Get first 4 products as featured
+            
+            featuredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <div class="rating">${generateStars(product.rating)}</div>
+                    <p class="price">₹${product.price.toFixed(2)}</p>
+                    <button class="btn add-to-cart" data-id="${product.id}">Add to Cart</button>
+                    <a href="product-details.html?id=${product.id}" class="btn view-details">View Details</a>
+                `;
+                featuredContainer.appendChild(productCard);
+            });
+
+            // Update cart count
+            updateCartCount();
+        });
+
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    stars += '<i class="fas fa-star"></i>';
+                } else if (i - 0.5 <= rating) {
+                    stars += '<i class="fas fa-star-half-alt"></i>';
+                } else {
+                    stars += '<i class="far fa-star"></i>';
+                }
+            }
+            return stars;
+        }
+    </script>
+</body>
+</html>
